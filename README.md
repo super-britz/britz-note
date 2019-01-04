@@ -1,6 +1,7 @@
 # 笔记和思维导图
------------------
+
 #### 持续更新中...
+
 | Author 	| britz            	|
 |--------	|------------------	|
 | E-mail 	| 906443185@qq.com 	|
@@ -11,6 +12,7 @@
 
 [TypeScript的前世今生](./note/TypeScript的前世今生.md)（录播）
 
-[你不知道的CSS](./note/你不知道的CSS.md)（直播）
+[EcmaScript5核心技术](./note/EcmaScript5核心技术.md)（直播）
 
+[你不知道的CSS](./note/你不知道的CSS.md)（直播）
 

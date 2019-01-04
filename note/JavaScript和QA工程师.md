@@ -28,6 +28,7 @@
 	- karma自动化runner集成PhantomJs无刷新
 	
 	```javascript
+
 		npm install -g karma
 		
 		npm install karma-cli --save-dev
@@ -44,13 +45,15 @@
 + 报告和单测覆盖率检查
 
 	```javascript
+
 		npm install karma-coverage --save-dev
 		
 		coverageReporter:{
 			type: 'html',
-			dir: 'coberage/
+			dir: 'coberage/'
 		} 
 		// 配置代码覆盖率测试率生成结果
+		
 	```
 
 
