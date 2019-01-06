@@ -10,6 +10,8 @@
 
 [你不知道的HTML（跨域）](./note/你不知道的HTML.md)（录播）
 
+[CSS高级技巧](./note/CSS高级技巧.md)（录播）
+
 [JavaScript与QA工程师](./note/JavaScript和QA工程师.md)（录播）
 
 [TypeScript的前世今生](./note/TypeScript的前世今生.md)（录播）
