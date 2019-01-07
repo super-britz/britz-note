@@ -2,14 +2,14 @@
 - 早期的圣杯布局、双飞翼布局 + css hack
 - 基于移动端的 px 和 rem 的转化方案
 - 弹性盒模型和 Reset 选择
-- css 代码规范 和 团队项目规范
+- css 代码规范 和 团队项目规范
 - css 绘制特殊图形 高级技巧
 - BFC、IFC、GFC 和 FFC
 
-##### 1. 圣杯布局和双飞翼布局(左右定宽，中间自适应) 
+##### 1. 圣杯布局和双飞翼布局(左右定宽，中间自适应) 
 
 圣杯布局是 middle+padding，双飞翼采用子元素+margin主要都是负边距的运用。
-优点：核心DOM优先渲染  
+优点：核心DOM优先渲染  
 缺点：实现垂直居中很麻烦
 
 这里有几点需要留意：
@@ -24,7 +24,7 @@
 
 ##### 3. flex 弹性盒模型
 
-reset.css 重置  
+reset.css 重置  
 normalize.css 修复  
 neat.css 融合  
 
@@ -33,7 +33,7 @@ neat.css 融合
 ###### BFC(Block Formatting Contexts)直译为"块级格式化上下文"  
 
 [Block Formatting Contexts](https://juejin.im/post/5909db2fda2f60005d2093db)就是页面上的一个隔离的渲染区域，容器里面的子元素不会在布局上影响到外面的元素，反之也是如此。  
-哪些元素会生成BFC？
+哪些元素会生成BFC？
 1. 根元素
 2. float的值不为none。 
 3. position的值为absolute和fixed。
@@ -61,7 +61,7 @@ BFC的作用
 
 IFC的line box（线框）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)  
 IFC作用
-1. 水平居中 `text-align:center;`
+1. 水平居中 `text-align:center;`
 2. 垂直居中 `vertical-align:middle;`
 
 ###### GFC(GridLayout Formatting Contexts)直译为"网格布局格式化上下文"
@@ -78,7 +78,7 @@ GFC作用
 #### 5. CSS分层与面向对象
 
 ###### BEM、SUIT、OOCSS、SMACSS、ITCSS
-1. [BEM](https://www.w3cplus.com/css/css-architecture-1.html)（block：块，Element：元素，Modifier：修饰符） 
+1. [BEM](https://www.w3cplus.com/css/css-architecture-1.html)（block：块，Element：元素，Modifier：修饰符） 
 
     ```css
     .block { /* 一个块就是一个组件 */ }
@@ -90,17 +90,17 @@ GFC作用
     - 可以立即知道哪些东西是子元素，哪些东西是修饰
 
     缺点： 
-    - 长长的BEM链式命名（块元素链接到孙元素）（创建新的块来保存元素）
+    - 长长的BEM链式命名（块元素链接到孙元素）（创建新的块来保存元素）
 
-    使用[命名空间](https://www.w3cplus.com/css/css-architecture-2.html)
+    使用[命名空间](https://www.w3cplus.com/css/css-architecture-2.html)
     - .l-: 布局(layouts)
-    - .o-: 对象(objects)，是Website的最小构建块，
+    - .o-: 对象(objects)，是Website的最小构建块，
         * 不包含任何其他对象或组件，可以有子元素。
-        * 不应该更改外部任何结构，不能有absolute、fixed、margin、padding（background-color存在可以有padding）、float
+        * 不应该更改外部任何结构，不能有absolute、fixed、margin、padding（background-color存在可以有padding）、float
     - .c-: 组件(components)，是可以在整个站点中使用的更大的构建块
     - .js: js的钩子(JavaScript hooks)
     - .is-|.has-: 状态类(state classes)
-        *  has 是否具有xx状态
+        *  has 是否具有xx状态
         *  is 处于xx状态
     - .t1|.s1: 排版大小(typography sizes)
     - .u-: 实用类(utility classes) 优先级高超过了其他样式`!important`声明
@@ -117,7 +117,7 @@ GFC作用
     优点：扩展性和重用性，单个css样式变小，整体变少  ，语义标记有助于SEO
     缺点： 最好给每一个组件备写一份说明文档，有助于调用与维护
     关键部分：
-    - 创建一个组件库，找出所有可重用的组件（比如 html 结构一样）
+    - 创建一个组件库，找出所有可重用的组件（比如 html 结构一样）
     - 独立的容器和内容，并且避免样式来依赖位置
     - 独立的结构和样式规则(Separate structure and skin)
     - 使用类名来扩展基础对象（Extend base objects using class name），基类和扩展类
