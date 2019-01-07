@@ -40,13 +40,13 @@
 
 5. 让字符变得漂亮起来，彩虹色
 
-    下载 [lolcat](https://github.com/busyloop/lolcat)  
+    下载 [lolcat](https://github.com/busyloop/lolcat)  
     命令行下载 `gem install lolcat`，可能需要加 sudo  
-    然后命令行打开`.bash_profile`文件, 将` lolcat ~/Desktop/welcome.txt `添加进去，就可以看到小手枪了
+    然后命令行打开`.bash_profile`文件, 将` lolcat ~/Desktop/welcome.txt `添加进去，就可以看到小手枪了
 
 6. 下载安装字体库 [Powerline fonts](https://github.com/powerline/fonts)
 
-    ```
+    ```bash
     # clone
     git clone https://github.com/powerline/fonts.git --depth=1
     # install
@@ -62,7 +62,7 @@
 
 7. 安装 [Oh-My-ZSH](https://github.com/robbyrussell/oh-my-zsh)
 
-    命令行安装`sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+    命令行安装`sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
     通过`echo $SHELL`可以查看当前系统默认shell  
     通过`cat /etc/shells `可以查看系统中安装的shell
