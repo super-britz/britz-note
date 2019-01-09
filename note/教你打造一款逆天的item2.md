@@ -75,3 +75,7 @@
 
     命令行打开`.zshrc`文件 `open ~/.zshrc` 找到ZSH_THEME修改为你想要的主题即可
     默认主题是 `ZSH_THEME="robbyrussell"` 我修改成 `ZSH_THEME="agnoster"`
+
+9.  设置背景图片
+    
+    iTerm2 -> Preferences -> Profiles -> Window -> BackGround Image 勾选图片即可。

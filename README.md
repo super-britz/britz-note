@@ -22,3 +22,5 @@
 
 [教你打造一款逆天的item2](./note/教你打造一款逆天的item2.md)（PDF）
 
+[JavaScript与QA工程师2](./note/JavaScript和QA工程师2.md)（直播）
+
