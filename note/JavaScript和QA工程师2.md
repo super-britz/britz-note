@@ -332,7 +332,7 @@ app.get('/', function (req, res) {
 
 app.listen(3000)
 ```
-我们先启动本地服务
+我们先启动本地服务node express.js
 现在我们需要把mocha跑起来，在项目根目录再新建一个文件mochaRunner.js
 ```js
 // mochaRunner.js
