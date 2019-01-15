@@ -65,10 +65,10 @@
     命令行安装`sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
     通过`echo $SHELL`可以查看当前系统默认shell  
-    通过`cat /etc/shells `可以查看系统中安装的shell
+    通过`cat /etc/shells `可以查看系统中安装的shell   
     通过 `chsh -s /bin/zsh`可以设置默认的shell为Oh-My-ZSH 
-
-    Mac环境下默认的shell为Bash$，这个时候你可能发现` lolcat ~/Desktop/welcome.txt` 这行命令的效果不生效了。这个是因为环境变量改变成zsh shell了，需要`open ~/.zshrc`把` lolcat ~/Desktop/welcome.txt`放在`.zshrc`里面
+ 
+    Mac环境下默认的shell为Bash$，这个时候你可能发现` lolcat ~/Desktop/welcome.txt` 这行命令的效果不生效了。这个是因为环境变量改变成zsh shell了，需要打开.zshrc文件`open ~/.zshrc`把.bash_profile的配置应用进.zshrc文件里来添加`source ~/.bash_profile`到`source $ZSH/oh-my-zsh.sh`的前面
 
     
 8.  换主题
@@ -76,6 +76,6 @@
     命令行打开`.zshrc`文件 `open ~/.zshrc` 找到ZSH_THEME修改为你想要的主题即可
     默认主题是 `ZSH_THEME="robbyrussell"` 我修改成 `ZSH_THEME="agnoster"`
 
-9.  设置背景图片
+9. 设置背景图片
     
     iTerm2 -> Preferences -> Profiles -> Window -> BackGround Image 勾选图片即可。
