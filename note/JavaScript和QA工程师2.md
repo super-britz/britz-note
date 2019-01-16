@@ -149,7 +149,7 @@ npm小知识：
 
 #### 自动化测试 e2e
 
-selenium-webdriver 安装
+selenium-webdriver 安装
 ```
 npm install selenium-webdriver --save-dev
 ``` 
@@ -220,7 +220,7 @@ npm install -g backstopjs
 # The --ignore-scripts argument will cause npm to not execute any scripts defined in the package.json. See npm-scripts.
 
 # 假如你backstop test 又出现了这个问题 Chromium revision is not downloaded. Run "npm install" or "yarn install" 
-# 我目前解决不了, 替代方案是用cnpm 安装backstopjs，个人猜测，可能跟仓库有关系，暂时就先这样流程走起来把，接下来学node再好好研究下npm
+# 我目前解决不了, 替代方案是用cnpm 安装backstopjs，个人猜测，可能跟仓库有关系，暂时就先这样流程走起来把，接下来学node再好好研究下npm
 ```
 ```js
 {
@@ -333,7 +333,7 @@ app.get('/', function (req, res) {
 app.listen(3000)
 ```
 我们先启动本地服务node express.js
-现在我们需要把mocha跑起来，在项目根目录再新建一个文件mochaRunner.js
+现在我们需要把mocha跑起来，在项目根目录再新建一个文件mochaRunner.js
 ```js
 // mochaRunner.js
 const Mocha = require("mocha");
