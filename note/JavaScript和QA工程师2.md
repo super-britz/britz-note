@@ -11,7 +11,7 @@
 [BackstopJS](https://github.com/garris/BackstopJS)、
 [Mocha](https://mochajs.org/)
 
-#### 单元测试
+#### 单元测试
 
 使用karma集成测试环境对代码进行单元测试
 ```bash
@@ -113,7 +113,7 @@ module.exports = function(config) {
 }
 ```
 
-上面的配置文件中，我选择unit作为浏览器加载的dir，docs作为报表生成的dir，所以我们需要一个unit文件夹放测试文件，并创建index.js、index.spec.js
+上面的配置文件中，我选择unit作为浏览器加载的dir，docs作为报表生成的dir，所以我们需要一个unit文件夹放测试文件，并创建index.js、index.spec.js
 
 ```js
 // index.js
@@ -153,7 +153,7 @@ selenium-webdriver 安装
 ```
 npm install selenium-webdriver --save-dev
 ``` 
-创建一个e2e文件夹，再创建子文件夹sel放用来放selenium-webdriver代码，rize文件放rize代码，自动化测试的代码, 再新建selenium-webdriver代码google.spec.js，rize代码github.spec.js
+创建一个e2e文件夹，再创建子文件夹sel放用来放selenium-webdriver代码，rize文件放rize代码，自动化测试的代码, 再新建selenium-webdriver代码google.spec.js，rize代码github.spec.js
 ```js
 // google.spec.js
 const {Builder, By, Key, until} = require('selenium-webdriver');
@@ -171,7 +171,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
   }
 })();
 ```
-每个主流浏览器都需要下载其他组件才能使用, 解压后放到项目根目录中，比如chrome，本地安装chrome了，还需要 chromedriver(.exe)，safari还需要配置 `工具栏 -> 开发-> 允许远程自动化`
+每个主流浏览器都需要下载其他组件才能使用,解压后放到项目根目录中，比如chrome，本地安装chrome了，还需要 chromedriver(.exe)，safari还需要配置 `工具栏 -> 开发-> 允许远程自动化`
 
 | Browser           	| Component                                                                                                                                                                            	|
 |-------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
@@ -181,7 +181,7 @@ const {Builder, By, Key, until} = require('selenium-webdriver');
 | Firefox           	| [geckodriver(.exe)](https://github.com/mozilla/geckodriver/releases/)                                                                                                                	|
 | Safari            	| [safaridriver](https://developer.apple.com/library/archive/releasenotes/General/WhatsNewInSafari/Articles/Safari_10_0.html#//apple_ref/doc/uid/TP40014305-CH11-DontLinkElementID_28) 	|
 
-因为我选择的是谷歌浏览器，所以还需要安装谷歌的启动器，放到当前项目根目录，然后运行`node ./e2e/sel/*.spec.js`
+因为我选择的是谷歌浏览器，所以还需要安装谷歌的启动器，放到当前项目根目录，然后运行`node ./e2e/sel/*.spec.js`
 
 
 Rize安装
@@ -205,7 +205,7 @@ rize
 然后运行`node ./e2e/rize/*.spec.js`
 
 
-#### UI测试
+#### UI测试
 
 [BackstopJS](https://www.npmjs.com/package/backstopjs) 通过比较DOM截图随时间的变化，自动对响应式Web UI进行可视化回归测试
 
@@ -353,7 +353,7 @@ mocha.run(function(errLength) {
   }
 })
 ```
-最后`node ./mochaRunner`，你就可以把接口测试跑起来了，docs里有mochawesome生成的html报表
+最后`node ./mochaRunner`，你就可以把接口测试跑起来了，docs里有mochawesome生成的html报表
 
-最后的最后附赠一个三毛钱的小工具npm script命令太长了就可以用
+最后的最后附赠一个三毛钱的小工具npm script命令太长了就可以用
 [npm-run-all](https://www.npmjs.com/package/npm-run-all) 减少 npm run 的小工具，run-s用于顺序执行，run-p用于并行
