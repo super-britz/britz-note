@@ -65,7 +65,7 @@ module.exports = function(config) {
       'unit/**/*.js': ['coverage']
     },
 
-    // 报表生成的dir
+    // 报表生成的dir
     coverageReporter: {
       type : 'html',
       dir : './docs/coverage/'
@@ -142,7 +142,7 @@ karma start
 然后docs中生成一个coverage文件夹，里面有生成的测试代码覆盖率的可视化html页面。
 
 npm小知识：
-  - 生命周期pre和post，（prestrat，strat，poststrat命令都存在） npm run strat时自动执行 prestrat, strat, poststrat
+  - 生命周期pre和post，（prestrat，strat，poststrat命令都存在） npm run strat时自动执行 prestrat, strat, poststrat
   - npm script 管道|、串行&&、并行&
 
 
@@ -314,7 +314,7 @@ describe("node接口测试", function(){
   });
 });
 ```
-上面代码需要启动了一个本地服务器，这里我们选择 [express](https://expressjs.com/)作为本地启动的服务框架，还需要安装一下[axio](https://github.com/axios/axios)基于Promise的HTTP服务的插件。
+上面代码需要启动了一个本地服务器，这里我们选择 [express](https://expressjs.com/)作为本地启动的服务框架，还需要安装一下[axio](https://github.com/axios/axios)基于Promise的HTTP服务的插件。
 ```
 npm install express --save-dev
 npm install axios --save-dev
