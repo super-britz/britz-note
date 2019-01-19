@@ -24,3 +24,6 @@
 
 [JavaScript与QA工程师2](./note/JavaScript和QA工程师2.md)（直播）
 
+[Linux基本命令](./note/Linux基本命令.md)
+
+[Php必备基础知识](./note/Php必备基础知识.md)
