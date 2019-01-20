@@ -69,12 +69,12 @@ html语义化
         
         ```js
         假如不在许可范围内，服务器会返回一个正常的HTTP回应。
-        浏览器发现响应头信息没有包含Access-Control-Allow-Origin字段，然后抛出一个错误，被XMLHttpRequest的onerror回调函数捕获。
+        浏览器发现响应头信息没有包含Access-Control-Allow-Origin字段，然后抛出一个错误，被XMLHttpRequest的onerror回调函数捕获。
         (抛出错误跟http状态码无关，http返回200跨域也是报错的)
 
         假如在许可范围内，服务器响应头会多出几个字段。
-        - Access-Control-Allow-Origin 请求时Origin字段的值，要么是一个*，表示接受任意域名的请求。（必要字段）
-        - Access-Control-Allow-Credentials 表示是否允许发送Cookie，只会是true, 或者不返回该字段（可选字段）
+        - Access-Control-Allow-Origin 请求时Origin字段的值，要么是一个*，表示接受任意域名的请求。（必要字段）
+        - Access-Control-Allow-Credentials 表示是否允许发送Cookie，只会是true, 或者不返回该字段（可选字段）
         - Access-Control-Expose-Headers（可选字段）
         ```
         2. 非简单请求（not-so-simple request） 预检请求：  

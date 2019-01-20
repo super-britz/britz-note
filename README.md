@@ -26,4 +26,6 @@
 
 [Linux基本命令](./note/Linux基本命令.md)
 
-[Php必备基础知识](./note/Php必备基础知识.md)
+[Php必备基础知识](./note/Php必备基础知识.md)
+
+[JavaScript函数式编程](./note/JavaScript函数式编程.md)（直播）

@@ -32,7 +32,7 @@ function test() {
 }
 function init() {
   if (false) {
-    function test() {  // 早期浏览器等于2，函数提升会脱离false 
+    function test() {  // 早期浏览器等于2，函数提升会脱离false 
       console.log(2);
     }
   }

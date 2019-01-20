@@ -2,7 +2,7 @@
 
 ##### -> 访问对象或者类的成员（方法，属性），类似前端中的 `.`
 - `$obj->value` -> 获取对象的 value 值
-- `$obj->value = 1` -> 给对象的 value 属性赋值为 1
+- `$obj->value = 1` -> 给对象的 value 属性赋值为 1
 - `$obj->get($params)` -> 调用对象的 get 方法,参数 $params
 - `new CountrySearch()->search`-> 调用CountrySearch类实例的search属性
 - `new CountrySearch()->search($params)`-> 调用CountrySearch类实例化的search()方法,参数 $params
@@ -31,7 +31,7 @@ $age['Joe']="43";
 #### PHP的命名空间 和 use
 
 ##### [命名空间](http://php.net/manual/zh/language.namespaces.importing.php)
-类似于当前文件路径的别名，其他文件导入时，直接use别名下的xxx，方便操作。
+类似于当前文件路径的别名，其他文件导入时，直接use别名下的xxx，方便操作。
 
 如果文件没有任何命名空间，就相当于全局空间
 
@@ -39,5 +39,5 @@ $age['Joe']="43";
 类（包括抽象类和traits）、接口、函数和常量。
 
 ##### use 使用命名空间
-use 使用命名空间中的类
+use 使用命名空间中的类
 use 命名空间下的类 as 别名， as可以给要使用的类一个别名
