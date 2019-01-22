@@ -125,7 +125,7 @@ var test = {
     return go;
   }
 };
-var p = test.init(); // 60
+var p = test.init(); // 20
 p(); // 60
 new(test.init())(); // 60 60
 ```
