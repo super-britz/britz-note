@@ -29,3 +29,9 @@
 [Php必备基础知识](./note/Php必备基础知识.md)
 
 [JavaScript函数式编程](./note/JavaScript函数式编程.md)（直播）
+
+[node.js录播课](./note/node.js录播课.md)（录播）
+
+[express.js录播课](./note/express.js录播课.md)（录播）
+
+[koa.js录播课](./note/koa.js录播课.md)（录播）
