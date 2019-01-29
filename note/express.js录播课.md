@@ -121,6 +121,10 @@ debug 就像是扩充版的 console.log，但是与 console.log 不同，您不�
 - ...
 
 
-supervisor 热启动
+supervisor、nodemon 热启动
 
 log4 日志管理
+
+orm，mysql 操作数据库
+
+livereload
