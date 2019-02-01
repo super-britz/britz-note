@@ -11,7 +11,7 @@
 #### node.js npm 使用
 
 - 安装模块 npm install xx，全局加 -g 、开发依赖 --save-dev、 项目依赖 --save
-- 查看所有模块 npm list
+- 查看所有模块 npm list，显示1层模块 --depth=0
 - 查看模块版本号 npm list xx
 - 更新模块 npm update xx
 - 搜索模块 npm search xx
