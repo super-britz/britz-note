@@ -4,7 +4,7 @@
 
 MVC模式（Model–view–controller）是软件工程中的一种软件架构模式，把软件系统分为三个基本部分：模型（Model）、视图（View）和控制器（Controller）
 
-![wikipedia#mvc](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/1280px-MVC-Process.svg.png)
+![wikipedia#mvc](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/MVC-Process.svg/1280px-MVC-Process.svg.png)
 
 模型 Model 就是一个静态的数据模型，通过控制器 Controller 操作数据库等 
 
@@ -20,7 +20,7 @@ MVC模式（Model–view–controller）是软件工程中的一种软件架构�
 * Controller把数据传递给View 
 * View渲染最终结果并呈献给⽤用户
 
-控制器接收action，找到数据，然后生成 model，再把数据包给 view
+控制器接收action，找到数据，然后生成 model，再把数据包给 view
 
 ## Yii
 
@@ -28,7 +28,7 @@ MVC模式（Model–view–controller）是软件工程中的一种软件架构�
 
 Apache 服务器 通过localhost访问的是 htdocs 目录,
 本地数据库管理 phpMyAdmin,
-默认的mysql数据库 -> user表 -> host 用来控制本机ip的,
+默认的mysql数据库 -> user表 -> host 用来控制本机ip的,
 mysql -uroot -p123456 u是用户名 p是密码
 
 检查网络防火墙 systemctl status firewalld
@@ -57,7 +57,7 @@ php -S localhost:8080
 
 php -S 0.0.0.0:8080
 
-// 在yii项目根目录指定启动目录为web
+// 在yii项目根目录指定启动目录为web
 php -S localhost:8000 -t web/
 ```
 ### 应用结构
@@ -77,7 +77,7 @@ php -S localhost:8000 -t web/
 ├── widgets // 用于存放一些常用的小挂件的类文件。
 ```
 
-![静态结构 UML 关联图](../../../images/live/week_first/application-structure.png)
+![静态结构 UML 关联图](../../../images/live/week_first/application-structure.png)
 
 每个应用都有一个入口脚本 web/index.php，这是整个应用中唯一可以访问的 PHP 脚本。 入口脚本接受一个 Web 请求并创建应用实例去处理它。 应用在它的组件辅助下解析请求， 并分派请求至 MVC 元素。视图使用小部件 去创建复杂和动态的用户界面。
 
