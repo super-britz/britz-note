@@ -1,6 +1,9 @@
 #### 面向切面编程
 
-在项目开发的结尾阶段难免要加上很多统计数据的代码，这个时候AOP就能发挥作用了。
+AOP(面向切面编程)的主要作用是把一些跟核心业务逻辑模块无关的功能抽离出来，这些跟业务逻辑无关的功能通常包括数据统计、异常处理等。
+比如在项目开发的结尾阶段难免要加上很多数据统计的代码，这个时候AOP就能发挥作用了。
+
+AOP的好处首先是可以保持业务逻辑模块的纯净和高内聚性，其次是可以很方便地复用数据统计等功能模块。 
 
 ```js
 Function.prototype.before = function(fn) {
@@ -23,16 +26,19 @@ Function.prototype.after = function(fn) {
 
 ```js
 // 原代码
-var func = function () {
+var test = function () {
   console.log("2")
 }
 
 // AOP后的代码
-func = func.before(function () {
+test = test.before(function () {
   console.log("1");
 }).after(function () {
   console.log("3");
 } )
+
+// 执行
+test();
 ```
 
 这种使用AOP的方式来给函数添加职责，也是JavaScript语言中的一种非常特别的巧妙的装饰者模式实现。
