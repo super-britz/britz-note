@@ -39,3 +39,41 @@ chrome 采用纹理把页面中的内容分块发送给GPU。纹理能够以很�
 7. 离线 DOM Fragment/clone
 8. 虚拟 DOM react
 9. 必要的时候 display:none 不可见元素不会影响重排重绘，visibility 对重排影响，不影响重绘
+
+#### 硬件加速
+
+texture： 即 CPU 传输到 GPU 的一个 Bitmap
+GPU 能快速对 texture 进行偏移、缩放、旋转、修改透明度等操作。
+
+[CPU（中央处理器）vs GPU（图形处理器](https://www.zhihu.com/question/19903344)
+
+layer 模型
+
+- 浏览器根据 css 属性为元素生成 layers
+- 将 Layers 作为 texture 上传到 GPU
+- 当改变 Layer 的 transform，opacity 属性时，渲染跳过 Layout，paint，直接通知 GPU 对 layer 做变换
+
+#### layer 创建标准，可以在 GPU 里完成
+
+- 拥有 3d transform 属性
+- 使用 animation,transition 实现 opacity,transform 的动画
+- video
+- canvas
+- Flash
+- 使用 css filters 的元素
+- z-index 大于某个相邻节点的 layer 的元素
+
+1. 初次对元素进行布局(layout)
+2. 绘制(paint)元素到位图(bitmap)中
+3. 同步位图到合成器
+4. 上传位图到GPU内存中去
+5. 从GPU内存将位图显示到屏幕上
+6. 开始transform CSS转换
+7. 告诉合成器怎么做动画
+8. 绘制GPU内存中的位图到屏幕，多次绘制到transform结束
+
+节省了哪些时间？
+
+CPU进行Layout,Paint的时间
+CPU想GPU传输位图的时间
+
