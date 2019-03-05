@@ -63,11 +63,12 @@ CPU 密集型应用发展：多进程 -> 多线程 (eg. 科学数据运算）
     - -C 提供一个新注释
     - -f 指定密钥文件名
 2. 上传配置公钥 chmod（Change mode 改变模式）
-    - 普通用户在`／home/用户名`，root 用户在`／root`
+    - ssh-copy-id 将本地主机的公钥复制到远程主机的 `~/.ssh/authorized_keys` 文件上，并且设置合适的权限。
+    - `~`普通用户在`／home/用户名`，root 用户在 `／root`
 3. 配置本地私钥
 4. 免密登录功能的本地配置文件
-   1. 配置客户端 config 文件, ssh登录以免密登录的形式登录，会先读config 文件
-   2. 假如没有配置config或者配置不了，指定私钥，`ssh -i 私钥文件路径+文件名 root@140.82.21.152`
+   1. 配置客户端 config 文件，ssh 登录以免密登录的形式登录，会先读 config 文件
+   2. 假如没有配置 config 或者配置不了，指定私钥，`ssh -i 私钥文件路径+文件名 root@140.82.21.152`
 
 ![ssh](../../../images/live/week_third/ssh.png)
 
