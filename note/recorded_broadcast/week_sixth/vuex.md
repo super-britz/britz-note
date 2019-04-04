@@ -30,6 +30,9 @@ vuex 架构图
 - Module：将 store 分割成模块（module）
 
 vue 视图
+
 vuex 数据源
+
 vue-router 路由
+
 vuex-router-sync 数据源 & 路由
