@@ -4,7 +4,7 @@
 
 实例属性：Vue 实例暴露了一些带前缀 $的实例属性与方法，以便与用户定义的属性区分开来。
 
-> 不要在选项属性或回调上使用箭头函数，因为箭头函数是和父级上下文绑定在一起的，经常会因为 this 的指向而引发的错误。
+> 不要在选项属性或回调上使用箭头函数，因为箭头函数是和父级上下文绑定在一起的，经常会因为 this 的指向而引发的错误。
 > 
 > 原本生命周期钩子的 this 上下文指向调用它的 Vue 实例。
 
@@ -140,14 +140,14 @@ constructor (
 ```js
 new Watcher(vm, updateComponent, noop, { // 实例化一个渲染的 Watcher 去监听 vm 上的数据变化重新渲染
   before () { // before 函数是在数据变化的时候调用
-    if (vm._isMounted && !vm._isDestroyed) { // 先判断是否 mouted 完成，说明初始化的时候不会调用该方法。
+    if (vm._isMounted && !vm._isDestroyed) { // 先判断是否 mouted 完成，说明初始化的时候不会调用该方法。
     callHook(vm, 'beforeUpdate') 
     }
   }
 }, true /* isRenderWatcher */)
 
 ```
-在数据变化的时候调用 [flushSchedulerQueue](https://github.com/vuejs/vue/blob/dev/src/core/observer/scheduler.js#L71) 函数，函数执行过程中判断执行 `watcher.before()`，也就是 `callHook(vm, 'beforeUpdate') `, 再去调用 callUpdatedHooks 函数。callUpdatedHooks 函数里判断执行 `callHook(vm, 'updated')`函数。
+在数据变化的时候调用 [flushSchedulerQueue](https://github.com/vuejs/vue/blob/dev/src/core/observer/scheduler.js#L71) 函数，函数执行过程中判断执行 `watcher.before()`，也就是 `callHook(vm, 'beforeUpdate') `, 再去调用 callUpdatedHooks 函数。callUpdatedHooks 函数里判断执行 `callHook(vm, 'updated')`函数。
 
 `vm._watcher` 是专门用来监听 vm 上数据变化然后重新渲染的，所以它是一个渲染相关的 watcher，因此在 callUpdatedHooks 函数中，只有 vm._watcher 的回调执行完毕后，才会执行 `callHook(vm, 'updated')`函数。
 
