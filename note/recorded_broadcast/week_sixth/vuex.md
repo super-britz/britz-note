@@ -28,3 +28,8 @@ vuex 架构图
 - Mutations：更改 Vuex 的 store 中的状态的唯一方法（必须同步执行）
 - Action： Action 提交的是 mutation，而不是直接变更状态，actions 函数接收一个 context 对象（可以异步执行，返回 Promise）
 - Module：将 store 分割成模块（module）
+
+vue 视图
+vuex 数据源
+vue-router 路由
+vuex-router-sync 数据源 & 路由
