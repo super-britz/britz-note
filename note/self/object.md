@@ -175,7 +175,8 @@ Object.defineProperty(obj,Symbol.iterator,{
   emumerable: false, // 不可枚举
   writable:false, // 不可通过赋值运算改变 value
   value: function () {
-    var that = this; // 将当前的 this 对象复制一份到 that 变量
+    // 当前绑定到 value 上的匿名函数被调用时， this 就是调用该函数的对象。
+    var that = this; 
     var idx = 0;
     var list = Object.keys(that);
     return {
