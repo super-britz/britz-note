@@ -131,4 +131,72 @@ in 操作符检查的是属性名，数组的属性名是下标，如 `4 in [2,3
 
 "可枚举"相当于可以出现在对象属性的遍历中
 
-`propertyIsEnumerable`方法会检查`属性名`是否直接存在对象中，不检查原型链，并且满足"可枚举属性"
+- `propertyIsEnumerable`方法会检查`属性名`是否直接存在对象中（不检查原型链），并且满足"可枚举属性"
+- `Object.keys`方法，返回一个数组，包含对象的可枚举属性
+- `Object.getOwnPropertyNames`方法，返回一个数组，包含对象所有属性（包括不可枚举属性）
+
+#### 遍历
+
+1. forEach 会遍历数组中的所有`值`，并忽略回调函数返回值。
+2. every, 直到返回值为 false，终止遍历
+3. some, 直到返回值为 true，终止遍历
+4. `for..of`，也可以直接遍历值，会像访问对象请求一个迭代器对象，通过迭代器的方法遍历所有的返回值。
+
+数组有内置的`@@iterator`函数，用来返回迭代器对象。可以通过`Symbol.iterator`获取对象的`@@iterator`内部属性。
+
+```js
+var arr = [1,2,3,4];
+var it = arr[Symbol.iterator]();
+
+it.next(); // {value: 1, done: false}
+it.next(); // {value: 2, done: false}
+it.next(); // {value: 3, done: false}
+it.next(); // {value: 4, done: false}
+it.next(); // {value: undefined, done: true} 
+it.next(); // {value: undefined, done: true}
+
+// 当 done: true 时，结束遍历
+
+for(v of arr) {
+  console.log(v); // 1, 2, 3, 4
+}
+```
+
+普通对象没有内置的`@@iterator`函数，所以无法使用`for..of`。当然你也可以通过`Object.defineproperty`来定义`@@iterator`。
+
+```js
+var obj = {
+  a: 1,
+  b: 2
+}
+
+Object.defineProperty(obj,Symbol.iterator,{
+  configurable: true, // 属性描述符可以改变
+  emumerable: false, // 不可枚举
+  writable:false, // 不可通过赋值运算改变 value
+  value: function () {
+    var that = this; // 将当前的 this 对象复制一份到 that 变量
+    var idx = 0;
+    var list = Object.keys(that);
+    return {
+      next: function () {
+        return {
+          value: that[list[idx++]],
+          done: (idx > list.length)
+        };
+      }
+    };
+  }
+})
+
+// 手动遍历 obj
+var it = obj[Symbol.iterator]();
+it.next(); // {value: 1, done: false}
+it.next(); // {value: 2, done: false}
+it.next(); // {value: undefined, done: true}
+
+for(v of obj) {
+  console.log(v); // 1, 2
+}
+
+```
