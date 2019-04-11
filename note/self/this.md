@@ -95,7 +95,7 @@ function foo (a) {
 var bar = new foo(2); 
 // 这里执行的 new foo(2) 等价于 {a: 2}
 // 1. 创建一个新对象{}
-// 2. __proto__ 的构造函数指向 foo 函数
+// 2. 新对象会被执行 [[portotype]] 连接，新对象的 __proto__ 有一个 constructor 属性 指向 foo 函数。
 // 3. {}会被绑定到 foo 函数调用中的 this 中，调用结束 {a:2}
 // 4. 假如没有返回其他对象，就自动返回这个新对象
 console.log(bar.a); // 2
