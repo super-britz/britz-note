@@ -215,7 +215,7 @@ Car.prototype.sail = function(){
 }
 
 function BMW (color) {
-  Car.call(this. color)
+  Car.call(this,color)
   this.price = 140000;
 }
 
