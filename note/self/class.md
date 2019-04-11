@@ -64,7 +64,7 @@ Bar.prototype = Object.create(Foo.prototype);
 // 创建建一个新对象，重写 Bar 的原型（抛弃默认的原型），但是 Object.create 创建的新对象没有 constructor 属性，所以会通过原型链访问到 Foo 上的 constructor
 
 Bar.prototype.constructor = Bar; 
-// 假如想修复副作用，就就原型上追加 constructor 关联
+// 假如想修复 constructor 指向，就就原型上追加 constructor 关联
 
 Bar.prototype.label = function () {
     return this.label;
