@@ -56,7 +56,7 @@ Foo.prototype.myName = function () { // 实例化之后可以通过原型链访�
 }
 
 function Bar (name, label) {
-    Foo.call(this,name); // 修改父类的 this
+    Foo.call(this,name); // 继承父类，在 Bar 构造函数执行的时候，修改 this
     this.label = label;
 }
 
@@ -78,7 +78,8 @@ var person = new Bar("britz", 24);
 Bar.prototype = Foo.prototype; 
 // `=`是直接引用，会修改父类的 prototype。
 Bar.prototype = new Foo(); 
-// new 是直接调用构造函数 Foo，可能会产生一定副作用，比如 给 this 添加其他属性。 
+// new 是直接调用构造函数 Foo，可能会产生一定副作用
+// 1. 假如往父类构造函数传递参数的时候，父类就会被执行两次
 ```
 
 ES6 提供了一种可以直接修改关联的方法，对比如下
@@ -89,3 +90,11 @@ Bar.prototype = Object.create(Foo.prototype);
 // ES6
 Object.setPrototypeOf(Bar.prototype,Foo.prototype)
 ```
+
+#### 检查类的关系
+
+`object instanceof constructor` 只能处理对象和函数的关系。
+
+instanceof 用来检测，构造函数 constructor 的 prototype 属性是否出现在 object 的原型链`[[prototype]]`中
+
+注意⚠️：通过 Function.prototype.bind 方法构造出来的函数是个例外，它没有 prototype 属性。构造函数 constructor 的 prototype 会被替换成硬绑定的 prototype。、
