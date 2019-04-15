@@ -4,12 +4,12 @@
 
 2. 安装iTerm的一个深色语法主题
 
-    下载 [Seti theme for iTerm]( https://github.com/willmanduffy/seti-iterm ) 放到桌⾯,  
-    打开iterm2 -> preferences -> profiles -> colors -> colors presets -> import 选中刚才文件夹中的seti.itermcolors文件
+    - 下载 [Seti theme for iTerm]( https://github.com/willmanduffy/seti-iterm ) 放到桌面或者哪里
+    - 打开iterm2 -> preferences -> profiles -> colors -> colors presets -> import 选中刚才文件夹中的seti.itermcolors文件
 
 3. 让命令行变色
 
-    命令行打开`.bash_profile`文件
+    使用命令打开`.bash_profile`文件，二选一。
 
     - open ~/.bash_profile
     - vim ~/.bash_profile
@@ -19,13 +19,12 @@
     ```bash
     export CLICOLOR=1
     export LSCOLORS=GxFxCxDxBxegedabagaced
-    export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\
-    [\033[00m\]\$ '
+    export PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     ```
 
 4. 找到喜欢的终端字符图案，比如下面小手枪，新建个文件如 welcome.txt (下面要用)
 
-    ```
+    ```txt
     ,--^----------,--------,-----,-------^--,
     | |||||||||   `--------'     |          O
     `+---------------------------^----------|
@@ -38,11 +37,10 @@
     (________( ❄ 十万个为什么 @ 一问三不知 ❅ ☼ `------'
     ```
 
-5. 让字符变得漂亮起来，彩虹色
+5. 让小手枪变彩虹色
 
-    下载 [lolcat](https://github.com/busyloop/lolcat)  
-    命令行下载 `gem install lolcat`，可能需要加 sudo  
-    然后命令行打开`.bash_profile`文件, 将` lolcat ~/Desktop/welcome.txt `添加进去，就可以看到小手枪了
+    - 通过命令行 `gem install lolcat` 下载 [lolcat](https://github.com/busyloop/lolcat) ，可能需要加 `sudo`
+    - 然后命令行打开`.bash_profile`文件, 将` lolcat ~/Desktop/welcome.txt `添加进去，就可以看到小手枪了
 
 6. 下载安装字体库 [Powerline fonts](https://github.com/powerline/fonts)
 
@@ -79,3 +77,12 @@
 9. 设置背景图片
     
     iTerm2 -> Preferences -> Profiles -> Window -> BackGround Image 勾选图片即可。
+
+10. 设置命令代码高亮
+
+    - 下载插件 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) ，记住插件的位置。
+    - 打开.zshrc 文件，在文件最后添加下 `source xx/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh`，xx是插件文件夹的位置
+    - cd ~/.oh-my-zsh/custom/plugins
+    - 再次打开.zshrc 件，在文件最后添加下 `plugins=(zsh-syntax-highlighting)`
+
+
