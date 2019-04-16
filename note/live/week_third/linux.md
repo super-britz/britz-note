@@ -58,17 +58,32 @@ CPU 密集型应用发展：多进程 -> 多线程 (eg. 科学数据运算）
 
 #### linux 免密登录
 
-1. 生成密钥对，不对称加密
-    - -t 指定要创建的密钥类型
-    - -C 提供一个新注释
-    - -f 指定密钥文件名
-2. 上传配置公钥 chmod（Change mode 改变模式）
-    - ssh-copy-id 将本地主机的公钥复制到远程主机的 `~/.ssh/authorized_keys` 文件上，并且设置合适的权限。
+1. `ssh-keygen`命令在 __当前目录__ 生成密钥对。
+
+    - `ssh-keygen -t rsa -C "本机配置免密登录" -f "britz_20190416_rsa"`
+    
+    注意不要输入密码，连敲两次回车，让密钥对生成。
+
+    - -t 指定要创建的密钥类型， rsa（不对称加密）
+    - -C 提供一个新注释，本机配置免密登录（文件内的注释）
+    - -f 指定密钥文件名，britz_20190416_rsa（文件名）
+
+2. 上传公钥到远程服务器的 `~/.ssh/authorized_keys`文件
+
+    - 将本地主机的公钥文件复制上传 `ssh-copy-id -i "公钥文件" 用户名@服务器ip或域名`
+    - `ssh-copy-id -i "britz_20190416_rsa.pub" root@140.82.21.152`
+    - 设置公钥权限，`chmod 600`，`chmod 是 change mode 的缩写`
+
+3. 配置本地私钥到本地主机`~/.ssh`目录下
+
     - `~`普通用户在`／home/用户名`，root 用户在 `／root`
-3. 配置本地私钥
-4. 免密登录功能的本地配置文件
-   1. 配置客户端 config 文件，ssh 登录以免密登录的形式登录，会先读 config 文件
-   2. 假如没有配置 config 或者配置不了，指定私钥，`ssh -i 私钥文件路径+文件名 root@140.82.21.152`
+    - 设置私钥权限，`chmod 600`
+
+4. 免密登录功能的本地配置文件`~/.ssh/config`
+   - `vi config`
+   - 配置本地客户端 config 文件，ssh 以免密的形式登录，会先读 `~/.ssh/config` 文件
+   - 假如没有配置 config 或者配置不了，登陆时需要指定私钥文件
+   - `ssh -i 私钥文件路径+文件名 root@140.82.21.152`
 
 ![ssh](../../../images/live/week_third/ssh.png)
 
@@ -96,10 +111,11 @@ ServerAliveCountMax 20
 LogLevel INFO
 
 #单主机配置
+# ssh配置名
 Host britz-server
-User root
-HostName IP 或绑定的域名
-IdentityFile ~/.ssh/britz_rsa
+User root # 登录用户
+HostName 140.82.21.152 # 远程主机IP或域名
+IdentityFile ~/.ssh/britz_20190416_rsa # 私钥文件
 Protocol 2
 Compression yes
 ServerAliveInterval 60
