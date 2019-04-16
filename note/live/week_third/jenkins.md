@@ -21,9 +21,12 @@
 
 ## jenkins 项目配置
 
-主要就是两部分：
+主要分 4 部分：
 
-1. Source Code Management 管理，项目从哪来的
+1. Source Code Management 管理，项目从哪来的，假如Github
+    - 配置 webhooks 地址，必须是Github(外网)可以访问的，webhook地址就是`http://Jenkins的地址/github-webhook`
+    - Jenkins 需要权限的操作的账号密码等； 
+    - Jenkins 安装GitHub Plugin插件；
 2. Build 过程，执行 shell 脚本，构建可以发布的代码
 3. 配置 ssh 服务器，传输的文件到哪个目录
 4. 部署，在 ssh 服务器配置的目录下，是否需要执行脚本，停服务，起服务，PM2发布等
