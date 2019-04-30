@@ -25,6 +25,12 @@ InversifyJS 需要一个现代 JavaScript 引擎，支持：
 npm install inversify reflect-metadata --save
 ```
 
+
+
+#### 控制依赖项的范围
+
+InversifyJS 默认使用瞬态范围（inTransientScope），但您也可以使用单例（inSingletonScope）和请求范围（inRequestScope）
+
 #### 实现接口和标识符的类型
 
 依赖于抽象，而不是具体结果（实例），也就是说类（class）的实现依赖于接口（interface）
@@ -212,6 +218,29 @@ let server = new InversifyKoaServer(container, null, null, app);
 
 ```js
 npm install inversify-binding-decorators --save
+```
+
+####  多次绑定怎么约束 AMBIGUOUS_MATCH 错误的？(防止后面定义的别名看不懂)
+
+- [Tagged bindings](https://github.com/inversify/InversifyJS/blob/master/wiki/tagged_bindings.md)
+- [Named bindings](https://github.com/inversify/InversifyJS/blob/master/wiki/named_bindings.md)
+
+```ts
+// Tagged bindings
+@inject("Weapon") @tagged("canThrow", false) katana: Weapon,
+@inject("Weapon") @tagged("canThrow", true) shuriken: Weapon
+
+container.bind<Weapon>(weaponId).to(Katana).whenTargetTagged("canThrow", false);
+container.bind<Weapon>(weaponId).to(Shuriken).whenTargetTagged("canThrow", true);
+```
+
+```ts
+// Named bindings
+@inject("Weapon") @named("strong") katana: Weapon,
+@inject("Weapon") @named("weak") shuriken: Weapon
+
+container.bind<Weapon>("Weapon").to(Katana).whenTargetNamed("strong");
+container.bind<Weapon>("Weapon").to(Shuriken).whenTargetNamed("weak");
 ```
 
 使用 inversify-binding-decorators 之前，绑定类到容器。
