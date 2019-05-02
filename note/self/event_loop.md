@@ -38,13 +38,23 @@ JavaScript 引擎存在 monitoring process 进程，持续不断的检查主线�
 
 #### 宏任务 && 微任务
 
-- 宏任务 
-  - script（整理 javascript 代码）
-  - setTimeout
-  - setInterval
-- 微任务
-  - Promise
-  - process.nextTick
+| 宏任务                | 浏览器支持 | Node支持 |
+| :-------------------- | ---------- | -------- |
+| I/O                   | ✅          | ✅        |
+| setTimeout            | ✅          | ✅        |
+| setInterval           | ✅          | ✅        |
+| setImmediate          | ❌          | ✅        |
+| requestAnimationFrame | ✅          | ❌        |
+| 整体的 script 代码    | ✅          | ✅        |
+
+| 微任务                              | 浏览器支持 | Node支持 |
+| ----------------------------------- | ---------- | -------- |
+| process.nextTick                    | ❌          | ✅        |
+| MutationObserver                    | ✅          | ❌        |
+| Promise的三个方法then,catch,finally | ✅          | ✅        |
+| async/await                         | ✅          | ✅        |
+
+
 
 1. 整体 script 作为第一个宏任务，script 执行过程中。
    1. 有同步任务立即执行同步任务。
