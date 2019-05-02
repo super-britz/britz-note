@@ -154,7 +154,7 @@ export class FooController implements interfaces.Controller {
 1. 按照 inversify 文档配置容器。
 
 2. 创建服务，将容器传递给 InversifyKoaServer 构造函数。
-3. 为了让 InversifyKoaServer 能找到你写的 controllers，必须将它们绑定到 TYPE.Controller 标识符。使用 controller's name 绑定到 TYPE.Controller 上。
+3. 为了让 InversifyKoaServer 能找到你写的 controllers，必须将它们绑定到 TYPE.Controller 标识符。使用 controller's name 绑定到 TYPE.Controller 上（注意给别名，不然多个类绑定到一个标识符会报错）。
 
 ```ts
 import { Container } from 'inversify';
