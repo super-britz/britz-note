@@ -28,7 +28,7 @@ flux 是一共架构思想，专门解决软件的结构问题，跟 mvc 架构�
 
 #### [redux](https://github.com/YutHelloWorld/Blog/issues/3)
 
-state 不可变性，按引用传递（对象），改变对象一个属性，整个对象也会重新渲染。immutable 是处理同步事件和异步事件的走两变 state 问题的。
+state 不可变性，按引用传递（对象），改变对象一个属性，整个对象也会重新渲染。immutable 是处理同步事件和异步事件的走两遍 state 问题的。
 
 provider 是连接 view 和 redux store 的容器
 
