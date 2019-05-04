@@ -30,7 +30,6 @@ TypeScript是 javascript 的超集，本质上向 javascript 添加了可选的�
 	- 结构 是个壳子，需要去添 类型
 	- 枚举 是个集合 类型
 
-	
 3. 面向对象编程、类、继承、多态、接口、命名空间、变量的修饰、构造函数、访问器(Get、Set)、静态属性
 	
 	其他语言都有
@@ -51,10 +50,10 @@ TypeScript是 javascript 的超集，本质上向 javascript 添加了可选的�
 	- 访问器 先Set再Get
 	- 静态属性
 	
-4. 委托、泛性、反射、集合 (动态数组 ArrayList/Hashtable/SortedList/Stack/Queue)、匿名函数、拆箱
+4. 委托、泛型、反射、集合 (动态数组 ArrayList/Hashtable/SortedList/Stack/Queue)、匿名函数、拆箱
 
 	- 委托 div绑定事件20个 引擎去找，再绑定, 委托body找target
-	- 泛性 随意的类型
+	- 泛型 随意的类型
 	- 反射 找到所有类里面的数据，动态化
 	- 集合 数据结构，实现了所有数据结构的高级动态语言
 	- 拆箱 比如es6的import 拆箱封箱 编程语言统一化的思想
