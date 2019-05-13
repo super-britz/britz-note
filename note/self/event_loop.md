@@ -46,6 +46,9 @@ JavaScript 引擎存在 monitoring process 进程，持续不断的检查主线�
 | setImmediate          | ❌          | ✅        |
 | requestAnimationFrame | ✅          | ❌        |
 | 整体的 script 代码    | ✅          | ✅        |
+| ajax 事件绑定         |            |          |
+| PostMessage           |            |          |
+| MessageChannel        |            |          |
 
 | 微任务                              | 浏览器支持 | Node支持 |
 | ----------------------------------- | ---------- | -------- |
