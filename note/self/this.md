@@ -138,3 +138,58 @@ o.foo(); // 2 隐式绑定 o.foo 有上下文对象
 4. 不可以改变 this 的绑定
 5. 不支持 arguments 对象，只能通过“__命名参数__”和“__不定参数__“来访问函数参数
 6. 不支持重复的命名参数。非严格模式下可以重复参数，但是后面会覆盖前面的。
+
+#### JS 执行环境
+
+- GO：全局执行上下文，global context
+- EC：函数执行上下文，Execution Context
+- ECS：函数执行栈，Execution Context Stack（GO对象在栈底，不会出栈，8M）
+  - 爆栈，是栈放不下，大小超过 8M 。
+  - 死循环，是当前函数不会出栈，其他函数没法执行。
+
+EC 创建的时候，伴随着 AO、VO
+
+- AO 活动对象，Active Object
+- VO 变量对象，Variable Object
+
+- scope chain 作用域链
+
+- [[scope]] 属性
+
+注意⚠️：闭包是存在堆里的，ECS 存的是一个引用。闭包会把 EC 保存，作用域链也就保存了。
+
+```js
+// 每个函数都有自己的 VO 对象，存储一些值
+变量对象 VO
+{
+  1. 函数声明
+  2. 函数形参
+  3. 变量声明
+}
+
+// 函数执行阶段创建 AO 对象
+活动对象 AO
+{
+  1. arguments 的 callee、length
+  2. 内部定义的函数
+  3. 绑定对应环境变量 
+  4. 内部定义的变量
+}
+
+// AO 分为两步，定义阶段和执行阶段
+// EC 内部有作用域链，由 AO 维护
+EC {
+  scopeChain:{Scope},
+  AO {
+    arguments: {
+      0: a,
+      length: 1
+    },
+    b: undefined
+  }, 
+  Scope:[AO, GO.vo], 
+  this: 不确定, // ECS 执行的时候，this 才确定，所以this永远指向 ECS 的栈顶
+}
+```
+
+Function 和 eavl 通过构造函数创建一个[[Scope]]，指向全局的词法作用域 
