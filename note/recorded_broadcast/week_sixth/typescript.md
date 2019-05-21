@@ -474,7 +474,7 @@ copyFields(x, { b: 10, d: 20 }); //  U 的字段 T 都有，没有就会报错
 interface CreateArrayFunc {
   (length: number, value: string): string[];
 }
-// 泛型接口，使用含有泛型的接口来定义函数的形状
+// 泛型接口，使用含有泛型的接口来定义函数的形状
 interface CreateArrayFunc { 
   <T>(length: number, value: T): Array<T>;
 }
