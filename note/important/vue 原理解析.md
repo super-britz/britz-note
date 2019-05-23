@@ -36,9 +36,11 @@ Proxy Reflect
 4. Dep：加上 Object.defineProperty 是发布者，Dep收集依赖，subs
 5. Directive：指令
 
+#### 观察者模式
+
 Vue2 用的Object.defineProperty不好，对 typescript 支持也不好，所以vue3 用 proxy，
 
-#### 发布-订阅者模式
+#### 订阅者模式
 
 主要涉及 3 个对象，发布者、主题对象、订阅者，一对多的关系。
 
@@ -77,7 +79,7 @@ setter，当触发getter的时候，observer则开始收集依赖，而触发set
 6. Watcher == Dep.target 类似于添加监听
 7. Compile 接收一个 node节点和 vue实例，创建**文档片段 CreateDocumentFragment**，利用while递归，递归编译dom环境，把vue实例添加进去，（监听假节点不用渲染）
 8. 编译 dom 的时候有文本节点 {{}} 和元素节点 v-model，创建 Watcher
-9. new  Watcher, 里面定义了 Dep.target = Watcher，每个Watcher有一个名字++uid，会造成数组（内存）不连续，导致内存泄漏。
+9. new  Watcher, 里面定义了 Dep.target = Watcher，每个Watcher有一个名字++uid，会造成数组（内存）不连续
 10. Watcher 何时添加到 Dep 中 , this.value = this.vm[this.name] // 读属性的时候，触发对应的 get 
 11. 发送通知 notify 的时候，同步处理会卡顿，所以使用批处理和异步处理，宏任务 setTimeout、微任务Promise、MutationObserver、MessageChannel
 12. batcher 批处理队列，batcher是单例的，第一次清空队列，利用Watcher id和异步队列，实现批处理
