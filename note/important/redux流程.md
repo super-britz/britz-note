@@ -1,4 +1,4 @@
-redux纯函数式编程的库，redux就是一个函子，实现流式编程，借鉴了reduce
+redux纯函数式编程的库，redux就是一个函子（创建容器），实现流式编程（组合），借鉴了 reduce
 
 1. 范畴论将世界抽象为对象和对象之间的联系，Linux 将所有I/O接口都抽象为文件，Redux将所有事件抽象为action。
 
@@ -8,7 +8,7 @@ redux纯函数式编程的库，redux就是一个函子，实现流式编程，�
 
 4. 高阶函数组合，可以形成设计模式中的职责链，Ramda库提供一个api，pipe调用顺序从左到右。
 
-5. [reduce](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) 是对 Array 迭代操作的抽象，Redux借鉴了 reduce 的思想，是 reduce 在时间流处理上的一种特殊应用
+5. [reduce](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) 是对 Array 迭代操作的抽象，Redux借鉴了 reduce 的思想，是 reduce 在事件流处理上的一种特殊应用
 
 6. redux 里的 createStore 三个参数 reducer initstate enhancer（middleware）
 
